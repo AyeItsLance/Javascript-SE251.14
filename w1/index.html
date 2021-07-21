@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Week 1">
+    <meta name="author" content="Lance Lespinasse">
+    <title>SE251 | W1</title>
+</head>
+<body>
+
+    <h1>Lance Lespinasse</h1>
+
+    <script type="text/javascript">
+
+        alert("Hello world!");
+
+    </script>
+    
+</body>
+
+
+
+    <script>
+
+        var a = `String`;
+        var b = 11;
+        var c = true;
+
+
+        console.log(typeof a);
+        console.log(typeof b);
+        console.log(typeof c);
+
+
+
+
+        function add (a,b){
+
+
+           sum = a+b
+
+            
+
+            return `${a}+${b}=${sum}`
+        }
+
+        console.log(add(5,2));
+
+
+
+        var myArray = new Array(100);
+
+        for (var i = 0; i < 100; i++){
+
+            myArray[i] = i + 1 //getting rid of the zero to make the next part easier
+
+
+        }
+
+        console.log(myArray);
+
+
+        for (var i = 0; i < myArray.length; i++){
+
+            myArray[i] = {index:myArray[i], label:undefined}
+            
+            
+
+              if (myArray[i].index%2 == 0 && myArray[i].index%3 == 0) 
+
+                myArray[i].label = 'Fizz Buzz'
+
+              else if (myArray[i].index%3 == 0)
+                
+                myArray[i].label = 'Buzz'
+
+              else if (myArray[i].index%2 == 0)
+
+                myArray[i].label = 'Fizz'
+
+
+        }
+
+
+        console.log(myArray); 
+
+
+
+        for (var i = 0; i < myArray.length; i++){
+
+
+            if (myArray[i].index%2 == 0 && myArray[i].label == 'Fizz')
+
+                console.log(myArray[i]);
+
+
+        }
+
+
+        for (var i = 0; i < myArray.length; i++){
+
+
+
+            for(value in myArray[i])
+            {
+
+                console.log(myArray[i][value]);
+            }
+            
+
+        }
+
+
+
+
+
+       
+
+
+
+
+
+
+        
+        
+
+      
+        
+
+      
+
+        
+
+      
+    </script>
+</html>
