@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+
+        div {
+            background: blue;
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+            float: left;
+        }
+    </style>
+
+    <div onclick="setColor(this)"></div>
+    <div onclick="setColor(this)"></div>
+    <div onclick="setColor(this)"></div>
+    <div onclick="setColor(this)"></div>
+    <div onclick="setColor(this)"></div>
+    <div onclick="setColor(this)"></div>
+    <div onclick="setColor(this)"></div>
+    <div onclick="setColor(this)"></div>
+
+
+    
+</body>
+
+<script>
+
+    var backgrounds = ["red", "green", "yellow", "orange", "purple", "violet", "pink", "steelblue", "blue"]; 
+    function setColor(el) { 
+        el.colorIdx = el.colorIdx || 0; 
+        el.style.backgroundColor = backgrounds[el.colorIdx++ % backgrounds.length]; 
+    } 
+
+
+</script>
+</html>
