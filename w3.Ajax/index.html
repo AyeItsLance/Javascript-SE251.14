@@ -1,0 +1,129 @@
+
+<html>
+<title>Game Reviews</title>
+<head>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<style type='text/css'>
+			.imgframe   { background:black; padding:12px; border:1px solid #999; }
+		</style>
+</head>
+<body>
+
+    
+
+<div class="container">
+	<div class="row">
+		<div class='col-md-8'>
+			<h1>Game Reviews</h1>
+			
+			
+			<table class="table table-striped">
+			<thead>
+			  <tr>
+				<th>Game Title</th>
+				<th>Console</th>
+				<th>Rating</th>
+				<th>Score</th>
+			  </tr>
+			</thead>
+			<tbody id="reviewsBody">
+			   
+			   
+				
+			</tbody>
+		  </table>
+	  </div>
+	 
+	  <div class='col-md-4' style='margin-top:200px;'>
+		<h2 id="gameTitle"></h2>
+			<img id='gameImage'  src=''>
+	  </div>
+	</div>
+</div>
+
+</body>
+</html>
+
+ <script>
+
+	fetch('https://se251-node.herokuapp.com/w3')
+   .then(response => response.json())
+   .then(reviews => {
+
+		console.log(reviews)
+
+		var message = ``
+
+
+
+		for(let i=0; i<reviews.length;i++)
+		{
+			
+				message += `<tr>`
+
+					message += `<td>`
+
+						message += `<a id="${i}" href="#" class="reviews" data-img="Images/${reviews[i].imageName}">${reviews[i].gameTitle}</a>`
+
+					message += `</td>`
+
+					message += `<td>`
+
+						message += `${reviews[i].consoles}`
+
+					message += `</td>`
+
+					message += `<td>`
+
+						message += `${reviews[i].rating}`
+
+					message += `</td>`
+
+					message += `<td>`
+
+						message += `${reviews[i].score}`
+
+					message += `</td>`
+
+					message += `</tr>`	
+
+
+			}
+
+
+		
+
+		
+
+		//   imgChange.onclick = "changeImg('C:/Users/James/OneDrive/Desktop/NEIT Stuff/TERM 4/Javascript-SE251.14/w3/Images/Battlefield1.jpg')"
+
+		console.log(reviews[0].gameTitle)
+
+		var inner = document.querySelector(`tbody`)
+
+		inner.innerHTML = message
+
+		var a = document.querySelectorAll(`.reviews`)
+
+		for(let i=0; i<a.length;i++)
+		{
+
+			a[i].addEventListener(`click`, doSomething)
+
+
+
+		}
+
+		console.log(a)
+
+		function doSomething(e){
+
+			e.preventDefault()
+
+			document.querySelector(`#gameImage`).src=e.target.dataset.img
+
+			document.querySelector('#gameTitle').innerHTML= e.target.innerHTML 
+		}
+   });	
+	
+</script>
