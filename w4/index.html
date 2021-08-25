@@ -19,90 +19,85 @@
 
 
 
-	fetch('http://example.com/movies.json')
+	fetch('https://se251-node.herokuapp.com/w2')
    .then(response => response.json())
-   .then(data => console.log(data));
+   .then(people => {
+
+	   console.log([people]);
+
+		var body = document.querySelector(`body`);
+
+		var message = ``
 
 
 
-
-
-
-
-	
-
-
-	//fetch('http://example.com/movies.json')
-  	//.then(response => response.json())
-  //	.then(data => console.log(data));
-
-
-	
-
-	var body = document.querySelector(`body`);
-
-	var message = ``
-
-
-
-	for(let i=0; i<people.length;i++)
-	{
-		message += `<div id="${i}" class="border">`
-			
-		for(value in people[i])
+		for(let i=0; i<people.length;i++)
 		{
+			message += `<div id="${i}" class="border">`
+				
+			for(value in people[i])
+			{
 
 
-			message += `<p>`
-			
-			message += `${people[i][value]}`
+				message += `<p>`
+				
+				message += `${people[i][value]}`
 
-			message += `<p>`
+				message += `<p>`
+
+
+			}
+			message += `</div>`
+
 
 
 		}
-		message += `</div>`
+
+		body.innerHTML = message
+
+		var body = document.querySelector(`div`)
+
+		var main = document.querySelector(`main`)
+
+		var div = document.createElement(`div`)
+
+		div.setAttribute(`class`, `border`)
+
+		main.appendChild(div)
 
 
+		var message2 = ``
 
-	}
-
-	body.innerHTML = message
-
-	var body = document.querySelector(`div`)
-
-	var main = document.querySelector(`main`)
-
-	var div = document.createElement(`div`)
-
-	div.setAttribute(`class`, `border`)
-
-	main.appendChild(div)
-	
-
-	var message2 = ``
-
-	for(let i=0; i<people.length;i++)
-	{
-
-		for(value in people[i])
+		for(let i=0; i<people.length;i++)
 		{
-			message2 +=`${people}`
-			
+
+			for(value in people[i])
+			{
+				message2 +=`${people}`
+				
+			}
+
+
 		}
 
 
-	}
+		var tempDiv = document.createElement(`div`);
+
+
+		tempDiv.setAttribute(`id`, `message2`)
+
+
+		tempDiv.appendChild(body)
+
+			
+			
+
+	});
+
 
 	
-	var tempDiv = document.createElement(`div`);
 
-
-	tempDiv.setAttribute(`id`, `message2`)
-
-
-	tempDiv.appendChild(body)
-
+	
 	
 </script>
 
