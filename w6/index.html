@@ -7,6 +7,128 @@
     <title>Document</title>
 </head>
 <body>
+    <form action=# method="POST">
+        <label for="first">First Name</label>
+        <input type="text" id="first" name="first" title="Input your first name" placeholder="First Name" message="Do it right!" required oninvalid="this.setCustomValidity('Enter User Name Here')" oninput="this.setCustomValidity('')"/>
+
+        <input type="text" id="last" name="last" title="Input your last name" placeholder="Last Name" message="Do it right!" required oninvalid="this.setCustomValidity('Enter Last Name Here')" oninput="this.setCustomValidity('')"/>
+
+        <br>
+
+
+        
+
+
+        <input type="email" required placeholder="Email">
+        <input type="email" required placeholder="Email Confirm">
+        
+        
+
+        <button type="submit" onclick="myFunction()" >Submit</button>
+    </form>
     
+
+    <script>
+
+        
+
+        document.addEventListener("DOMContentLoaded", function() {
+        var elements = document.getElementById("first");
+        
+            elements.oninvalid = function(e) {
+
+                e.target.setCustomValidity("");
+
+                if (!e.target.validity.valid) {
+
+                    e.target.setCustomValidity("Please enter in a First Name");
+                }
+            };
+
+            elements.oninput = function(e) {
+
+                e.target.setCustomValidity("");
+            };
+        
+        })
+
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+        var elements = document.getElementById("last");
+        
+            elements.oninvalid = function(e) {
+
+                e.target.setCustomValidity("");
+
+                if (!e.target.validity.valid) {
+
+                    e.target.setCustomValidity("Please enter in a Last Name");
+                }
+            };
+
+            elements.oninput = function(e) {
+
+                e.target.setCustomValidity("");
+            };
+        
+        })
+
+       
+
+
+
+    
+
+
+
+        var input = document.querySelectorAll(`input[type="email"]`);
+
+        input[1].addEventListener(`input`, (e)=>{
+            if(input[0].value === input[1].value){
+
+                
+
+                e.target.style.backgroundColor=`white`
+
+        
+            }
+
+            else
+            {
+
+                e.target.setCustomValidity(`Your email address doesn't match!`)
+
+                e.target.style.backgroundColor=`red`
+            }
+        })
+
+        function myFunction() {
+
+            var firstLabel = document.querySelector(`#first`).value
+
+            firstLabel.toUpperCase()
+
+            var lastLabel = document.querySelector(`#last`).value
+
+            lastLabel.toUpperCase()
+
+            var emailUpper = document.querySelector(`input[type="email"]`).value
+
+            emailUpper.toUpperCase()
+        
+
+            document.getElementById("myForm").submit();
+            
+        }
+
+
+        
+
+        
+
+
+
+    </script>
 </body>
 </html>
