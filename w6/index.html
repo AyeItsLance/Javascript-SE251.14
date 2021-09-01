@@ -20,7 +20,7 @@
 
 
         <input type="email" name="email" required placeholder="Email">
-        <input type="email" required placeholder="Email Confirm">
+        <input type="email" id="e" required placeholder="Email Confirm">
         
         
 
@@ -109,6 +109,10 @@
                 var emailUpper = document.querySelector(`input[type="email"]`)
 
                 emailUpper.value = emailUpper.value.toUpperCase()
+
+                var e1 = document.querySelector(`#e`)
+
+                e1.value = emailUpper.value.toUpperCase()
 
                 e.target.style.backgroundColor=`white`
 
