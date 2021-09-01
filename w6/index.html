@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action=# method="POST">
+    <form action="https://se251-node.herokuapp.com/w6" method="POST">
         <label for="first">First Name</label>
         <input type="text" id="first" name="first" title="Input your first name" placeholder="First Name" message="Do it right!" required oninvalid="this.setCustomValidity('Enter User Name Here')" oninput="this.setCustomValidity('')"/>
 
@@ -19,12 +19,12 @@
         
 
 
-        <input type="email" required placeholder="Email">
+        <input type="email" name="email" required placeholder="Email">
         <input type="email" required placeholder="Email Confirm">
         
         
 
-        <button type="submit" onclick="myFunction()" >Submit</button>
+        <button type="submit" >Submit</button>
     </form>
     
 
@@ -67,60 +67,102 @@
                 }
             };
 
-            elements.oninput = function(e) {
+             elements.oninput = function(e) {
 
                 e.target.setCustomValidity("");
             };
         
         })
 
-       
-
-
-
     
 
 
 
-        var input = document.querySelectorAll(`input[type="email"]`);
 
-        input[1].addEventListener(`input`, (e)=>{
-            if(input[0].value === input[1].value){
+        var myForm = document.querySelector("form")
 
+        myForm.addEventListener('change' , myFunction)
+
+        function myFunction(e) {
+            
+            e.preventDefault()
+
+            var input = document.querySelectorAll(`input[type="email"]`);
+
+            if(input[0].value === input[1].value || input[1].value === input[0].value){
+
+                document.querySelector('button[type="submit"]').disabled = false;
                 
+                e.target.style.backgroundColor=`white`
+
+
+                var firstLabel = document.getElementById(`first`)
+
+                firstLabel.value = firstLabel.value.toUpperCase()
+
+
+                var lastLabel = document.querySelector(`#last`)
+
+                lastLabel.value = lastLabel.value.toUpperCase()
+                
+
+
+                var emailUpper = document.querySelector(`input[type="email"]`)
+
+                emailUpper.value = emailUpper.value.toUpperCase()
 
                 e.target.style.backgroundColor=`white`
 
-        
+                
+
+                var submit = document.querySelector('button[type="submit"]')
+
+                submit.addEventListener('click', (e)=>{
+
+
+                    document.querySelector("form").submit();
+
+
+                })
+    
             }
 
             else
             {
 
+                document.querySelector('button[type="submit"]').disabled = true;
+                
+
                 e.target.setCustomValidity(`Your email address doesn't match!`)
 
-                e.target.style.backgroundColor=`red`
+                e.target.reportValidity()
+
+                input[1].style.backgroundColor=`red`
+
+                
+                
             }
-        })
 
-        function myFunction() {
 
-            var firstLabel = document.querySelector(`#first`).value
-
-            firstLabel.toUpperCase()
-
-            var lastLabel = document.querySelector(`#last`).value
-
-            lastLabel.toUpperCase()
-
-            var emailUpper = document.querySelector(`input[type="email"]`).value
-
-            emailUpper.toUpperCase()
-        
-
-            document.getElementById("myForm").submit();
             
         }
+
+        
+
+
+        
+        
+
+
+
+
+        
+
+
+
+        
+
+
 
 
         
