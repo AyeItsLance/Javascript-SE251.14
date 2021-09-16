@@ -93,42 +93,31 @@
                 
                 e.target.style.backgroundColor=`white`
 
-                
-
-
-                
-
             
-                var submit = document.querySelector('button[type="submit"]')
+                var firstLabel = document.getElementById(`first`)
 
-                submit.addEventListener('click', (e)=>{
-
-            
-
-                    var firstLabel = document.getElementById(`first`)
-
-                        firstLabel.value = firstLabel.value.toUpperCase()
+                firstLabel.value = firstLabel.value.toUpperCase()
 
 
-                        var lastLabel = document.querySelector(`#last`)
+                var lastLabel = document.querySelector(`#last`)
 
-                        lastLabel.value = lastLabel.value.toUpperCase()
+                lastLabel.value = lastLabel.value.toUpperCase()
 
 
-                        var emailUpper = document.querySelector(`#f`)
+                var emailUpper = document.querySelector(`#f`)
 
-                        emailUpper.value = emailUpper.value.toUpperCase()
+                emailUpper.value = emailUpper.value.toUpperCase()
 
-                        var e1 = document.querySelector(`#e`)
+                var e1 = document.querySelector(`#e`)
 
-                        e1.value = emailUpper.value.toUpperCase()
+                e1.value = emailUpper.value.toUpperCase()
 
 
 
-                        document.querySelector("form").submit();
+                document.querySelector("form").submit();
 
 
-                    })
+                
     
             }
 

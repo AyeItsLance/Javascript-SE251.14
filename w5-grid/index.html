@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5 Grid</title>
+
+<!--Style created for the grid to look better-->
+    <style type="text/css">
+        .border{border:2px solid black; padding: 5px; margin: 15px;}
+        
+    </style>        
+
+</head>
+
+<body>
+
+    
+
+    <form><input type="text"> <input type="button" value="Create A Grid"></form>
+
+    <div>
+
+        <p id="number"></p>
+
+
+        <p id="average"></p>
+
+
+    </div>
+
+    <script>
+
+        var text = document.querySelector(`input[type="text"]`)
+
+        var button = document.querySelector(`input[type="button"]`)
+
+        var number = document.querySelector(`#number`)
+
+        var average = document.querySelector(`#average`)
+
+        button.addEventListener('click', function(e){
+
+        
+            var arr = new Array()
+            
+            var total = 0
+            
+            var avg = 0
+
+            number.innerHTML = ""
+
+            console.log(number)
+
+            var parse = parseInt(text.value)
+
+            
+
+            var table = document.createElement(`table`)
+
+            for(i=0; i<parse; i++){
+                arr[i] = []
+
+                var tr = document.createElement(`tr`)
+
+
+                
+                for(g=0; g<parse; g++){
+                    arr[i][g] = randomNumber(1,100)
+
+                    var td = document.createElement(`td`)
+
+                    td.innerHTML = arr[i][g]
+
+                    total = total + arr[i][g]
+
+
+                    if(parseInt(td.innerHTML)%3==0){
+
+                        td.style.backgroundColor = 'Red'
+
+                        td.style.color = 'black'
+                    }
+
+                    else if(parseInt(td.innerHTML)%2==0){
+
+                        td.style.backgroundColor = 'Blue'
+
+                        td.style.color = 'Cyan'
+                    }
+
+                                  
+                    td.className = `border`
+                    tr.appendChild(td)
+                }
+
+                table.appendChild(tr)
+
+            }
+
+            avg = total / Math.pow(parse,2)
+
+            average.innerHTML = "Grid Average is: " + avg
+
+            number.appendChild(table)
+
+            
+
+        })
+
+        function randomNumber (min, max) {
+
+            return Math.floor (Math.random() * (max - min + 1)) + min;
+            }
+
+    </script>
+
+</body>
+</html>
