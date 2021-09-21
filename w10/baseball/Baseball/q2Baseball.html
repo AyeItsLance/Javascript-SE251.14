@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Question 2 - Baseball Teams</title>
+	<script src="jquery-3.2.1.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+
+	<style>
+
+        .winner{color: blue;}
+
+        .loser{color:red}
+
+    </style>
+	
+</head>
+
+<body>
+    <div style="margin-left: 50px; margin-top:50px;" class="container">
+		<h2>Question 2 - Baseball Teams</h2>
+		<div id="content">
+			<table class="table">
+			
+			</table>
+		</div>
+    </div>
+	
+	<script>
+	
+		var standings = [
+			{team:"Boston", wins: 81, losses:62, percentage: 0.566},
+			{team:"New York", wins: 77, losses:65, percentage: 0.542},
+			{team:"Baltimore", wins: 71, losses:72, percentage: 0.497},
+			{team:"Tampa Bay", wins: 71, losses:73, percentage: 0.493},
+			{team:"Toronto", wins: 66, losses:77, percentage: 0.462}
+			
+		];
+
+		var message = ``
+
+
+		for(let i =0; i<standings.length;i++)
+		{
+			if(standings[i].percentage > .500)
+			{
+				message += `<tr class = "winner">`
+
+				message += `<td>`
+
+					message += `<p id="g">${standings[i].team}</p`
+
+				message += `</td>`
+
+				message += `<td>`
+
+					message += `<p id="g">${standings[i].wins}</p`
+
+				message += `</td>`
+
+				message += `<td>`
+
+					message += `<p id="g">${standings[i].losses}</p`
+
+				message += `</td>`
+
+				message += `<td>`
+
+					message += `<p id="g">${standings[i].percentage}</p`
+
+				message += `</td>`
+
+			message += `</tr>`
+
+			}
+
+			if(standings[i].percentage < .500)
+			{
+				message += `<tr class = "loser">`
+
+				message += `<td>`
+
+					message += `<p id="g">${standings[i].team}</p`
+
+				message += `</td>`
+
+				message += `<td>`
+
+					message += `<p id="g">${standings[i].wins}</p`
+
+				message += `</td>`
+
+				message += `<td>`
+
+					message += `<p id="g">${standings[i].losses}</p`
+
+				message += `</td>`
+
+				message += `<td>`
+
+					message += `<p id="g">${standings[i].percentage}</p`
+
+				message += `</td>`
+
+			message += `</tr>`
+
+			}
+			
+
+			if(standings[i].percentage > .500)
+			{
+				var g = document.querySelectorAll(`tr`).className = "winner";
+
+				
+				
+				
+			}
+
+			
+		}
+
+		
+
+		var table = document.querySelector(`.table`)
+
+		table.innerHTML = message
+
+		var g = document.querySelectorAll(`tr`)
+
+
+		for(let i =4; i<standings.length;i++)
+		{
+
+			
+			{
+
+				
+
+
+			}
+
+		}
+
+
+			
+
+		
+
+		
+	
+	</script>
+</body>
+
+</html>
+
