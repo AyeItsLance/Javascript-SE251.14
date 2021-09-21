@@ -74,7 +74,7 @@
 
 			}
 
-			if(standings[i].percentage < .500)
+			if(standings[i].percentage <= .500)
 			{
 				message += `<tr class = "loser">`
 
@@ -106,16 +106,6 @@
 
 			}
 			
-
-			if(standings[i].percentage > .500)
-			{
-				var g = document.querySelectorAll(`tr`).className = "winner";
-
-				
-				
-				
-			}
-
 			
 		}
 
@@ -125,23 +115,7 @@
 
 		table.innerHTML = message
 
-		var g = document.querySelectorAll(`tr`)
-
-
-		for(let i =4; i<standings.length;i++)
-		{
-
-			
-			{
-
-				
-
-
-			}
-
-		}
-
-
+		
 			
 
 		
