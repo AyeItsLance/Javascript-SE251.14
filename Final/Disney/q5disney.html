@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Disney</title>
+		<link type="text/css" rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+	</head>
+	<body>
+	<nav>
+			<select>
+				<option value="0">Mickey</option>
+				<option value="1">Goofy</option>
+				<option value="2">Donald</option>
+			</select>
+		</nav>
+		<div id="wrapper">
+			<section>
+				<h1>Disney Characters</h1>
+				<img src="images/placeholder.png" alt="character" />
+				<p>Character Name</p>
+				<p><i>Quote Goes Here</i></p>
+			</section>
+		</div>
+		
+	<script>
+
+		fetch('https://se251-node.herokuapp.com/final')
+		.then(response => response.json())
+		.then(disney => {
+
+			console.log(disney)
+
+
+			var nav = document.querySelectorAll(`select`)
+
+			console.log(nav)
+
+	
+
+			if($('nav select option[value="Mickey"]'))
+			{
+				document.querySelector(`#wrapper p `).innerHTML = "Mickey"
+
+				document.querySelector(`#wrapper i `).innerHTML = "Oh, Minnie. You're all the music I'll ever need"
+			}
+
+			if($('nav select option[value="Goofy"]'))
+			{
+				document.querySelector(`#wrapper p `).innerHTML = "Goofy"
+			}
+
+			if($('nav select option[value="Donold"]'))
+			{
+				document.querySelector(`#wrapper p `).innerHTML = "Donold"
+			}
+
+			
+
+
+		});
+	
+	</script>	
+	</body>
+	
+</html>
+

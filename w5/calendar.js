@@ -70,12 +70,6 @@ function showCalendar (mth, yr) {
     $("#results").html(str);
      
 
-    
-
-    
-
-
-
 
 
 
@@ -83,8 +77,6 @@ function showCalendar (mth, yr) {
 
 
 
-    
-        
       
     
     $("#results").html(str);
@@ -122,7 +114,7 @@ function showCalendar (mth, yr) {
 
             divs[i].style.background = "green"
 
-            
+    
                     
         }
 
@@ -138,7 +130,6 @@ function showCalendar (mth, yr) {
 
 
         })
-
 
     }
 
